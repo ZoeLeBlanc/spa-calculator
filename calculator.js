@@ -59,7 +59,7 @@ function multiplyNum (num1, num2) {
   return product
 }
 
-/*  
+
 function getValues(operationMath) {
   var values= {};
   values.num1 = parseInt(number1.value);
@@ -68,29 +68,18 @@ function getValues(operationMath) {
 
   calculator(values.num1, values.num2, values.operate);
 }
-*/
 
- function calculator(operationToDo) {
-    num1 = parseInt(number1.value);
-    num2 = parseInt(number2.value);
-    var result = operationToDo(num1, num2);
-    console.log("result", result);
-    console.log("num1", num1);
-    console.log("num2", num2);
-    console.log("operationToDo", operationToDo);
-    return result
-     }
-    /*var num1 = parseInt(number1.value);
-    var  num2 = parseInt(number2.value);
-    var numTotal = "";
+
+ function calculator(num1, num2, operationToDo) {
+
     if (add.clicked) { 
-      numTotal = num1 + num2;
+      operationToDo(num1, num2);
     } else if (subtract.clicked) {
-      numTotal = num1 - num2;
+      operationToDo(num1, num2);
     } else if (divide.clicked) {
-      numTotal = num1 / num2;
+      operationToDo(num1, num2);
     } else if (multiply.clicked) {
-      numTotal = num1 / num2;
+      operationToDo(num1, num2);
     } else {
       numTotal = "";
     }
@@ -98,7 +87,7 @@ function getValues(operationMath) {
     console.log("num1", num1);
     //console.log("click" , num1, num2, operation);
     //return totalValue;
-    */
+   
 
 /*
   Create a function that accepts three arguments.
@@ -107,6 +96,7 @@ function getValues(operationMath) {
     3. A function that performs an operation on them
 
   Return the value of the operation.
+*/
  
  function calculator(num1, num2) {
     if (add.clicked) { 
