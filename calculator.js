@@ -11,16 +11,16 @@ var totalValue = "";
 
 
 addBtn.addEventListener("click", function() {
-  getInputs(addNum);
+  getValues(addNum);
 }, false);
 subtractBtn.addEventListener("click", function() {  
-  getInputs(subtractNum);
+  getValues(subtractNum);
   }, false);
 divideBtn.addEventListener("click", function() {
-  getInputs(divideNum);
+  getValues(divideNum);
 }, false);
 multiplyBtn.addEventListener("click", function() {
-  getInputs(multiplyNum);
+  getValues(multiplyNum);
 }, false);
 
 /*Create a function that adds two numbers
