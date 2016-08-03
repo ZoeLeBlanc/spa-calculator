@@ -5,11 +5,8 @@ var multiplyBtn = document.getElementById("multiplication");
 var outputDiv = document.getElementById("output");
 var number1 = document.getElementById("number1");
 var number2 = document.getElementById("number2");
-//var numb1 = number1.value;
-//var numb2 = number2.value;
-var totalValue = "";
 
-
+//Event listeners & calling functions
 addBtn.addEventListener("click", function() {
   calculator(addNum);
 }, false);
@@ -59,25 +56,21 @@ function multiplyNum (num1, num2) {
   return product
 }
 
-/*  
-function getInputs(operationMath) {
-  var inputs = {};
-  inputs.num1 = parseInt(number1.value);
-  inputs.num2 = parseInt(number2.value);
-  inputs.operate = operationMath;
+  
+function getValues(operationMath) {
+  var values = {};
+  values.num1 = parseInt(number1.value);
+  values.num2 = parseInt(number2.value);
+  values.operate = operationMath;
 
-  calculator(inputs.num1, inputs.num2, inputs.operate);
+  calculator(values.num1, values.num2, values.operate);
 }
-*/
+
 
  function calculator(operationToDo) {
-    num1 = parseInt(number1.value);
-    num2 = parseInt(number2.value);
     var result = operationToDo(num1, num2);
     console.log("result", result);
-    console.log("num1", num1);
-    console.log("num2", num2);
-    console.log("operationToDo", operationToDo);
+    outputDiv.innerHTML = result;
     return result
      }
     /*var num1 = parseInt(number1.value);
