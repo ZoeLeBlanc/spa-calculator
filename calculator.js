@@ -60,13 +60,13 @@ function multiplyNum (num1, num2) {
 }
 
   
-function getInputs(operationMath) {
-  var inputs = {};
-  inputs.num1 = parseInt(number1.value);
-  inputs.num2 = parseInt(number2.value);
-  inputs.operate = operationMath;
+function getValues(operationMath) {
+  var values = {};
+  values.num1 = parseInt(number1.value);
+  values.num2 = parseInt(number2.value);
+  values.operate = operationMath;
 
-  calculator(inputs.num1, inputs.num2, inputs.operate);
+  calculator(values.num1, values.num2, values.operate);
 }
 
  function calculator(num1, num2, operationToDo) {
