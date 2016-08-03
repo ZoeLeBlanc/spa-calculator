@@ -10,18 +10,10 @@ var number2 = document.getElementById("number2");
 var totalValue = "";
 
 
-addBtn.addEventListener("click", function() {
-  calculator(addNum);
-}, false);
-subtractBtn.addEventListener("click", function() {  
-  calculator(subtractNum);
-  }, false);
-divideBtn.addEventListener("click", function() {
-  calculator(divideNum);
-}, false);
-multiplyBtn.addEventListener("click", function() {
-  calculator(multiplyNum);
-}, false);
+addBtn.addEventListener("click", calculator, false);
+subtractBtn.addEventListener("click", calculator, false);
+divideBtn.addEventListener("click", calculator, false);
+multiplyBtn.addEventListener("click", calculator, false);
 
 /*Create a function that adds two numbers
   passed in as arguments. Return the sum.
@@ -59,7 +51,7 @@ function multiplyNum (num1, num2) {
   return product
 }
 
-
+/*
 function getValues(operationMath) {
   var values= {};
   values.num1 = parseInt(number1.value);
@@ -68,25 +60,9 @@ function getValues(operationMath) {
 
   calculator(values.num1, values.num2, values.operate);
 }
+*/
 
 
- function calculator(num1, num2, operationToDo) {
-
-    if (add.clicked) { 
-      operationToDo(num1, num2);
-    } else if (subtract.clicked) {
-      operationToDo(num1, num2);
-    } else if (divide.clicked) {
-      operationToDo(num1, num2);
-    } else if (multiply.clicked) {
-      operationToDo(num1, num2);
-    } else {
-      numTotal = "";
-    }
-    console.log("numTotal", numTotal);
-    console.log("num1", num1);
-    //console.log("click" , num1, num2, operation);
-    //return totalValue;
    
 
 /*
@@ -98,22 +74,27 @@ function getValues(operationMath) {
   Return the value of the operation.
 */
  
- function calculator(num1, num2) {
-    if (add.clicked) { 
-      operation = addNum();
-      totalValue = operation(num1, num2);
-    } else if (subtract.clicked) {
-     totalValue = operation(num1, num2);
-    } else if (divide.clicked) {
-     totalValue = operation(num1, num2);
-    } else if (multiply.clicked) {
-     totalValue = operation(num1, num2);
-    }
-
-    console.log("totalValue", totalValue);
-    console.log("click" , num1, num2, operation);
+function calculator(num1, num2, operationToDo) {
+    var result = "";
+    num1 = parseInt(number1.value);
+    num2 = parseInt(number2.value);
+    if (addBtn.click) { 
+      operationToDo = addNum;
+      result = operationToDo(num1, num2);
+    } else if (subtractBtn.click) {
+      operationToDo = subtractNum;
+      result = operationToDo(num1, num2);
+    } else if (divideBtn.click) {
+      operationToDo = divideNum;
+      result = operationToDo(num1, num2);
+    } else if (multiplyBtn.click) {
+      operationToDo = multiplyNum;
+      result = operationToDo(num1, num2);
+    } 
+    console.log("num1", num1);
+    console.log("operationToDo", operationToDo);
+    console.log("result", result);
+    return result
+}
+    //console.log("click" , num1, num2, operation);
     //return totalValue;
- }
-
-//calculator(number1, number2, addNum);
-*/
