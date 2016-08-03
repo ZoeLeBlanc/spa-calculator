@@ -11,16 +11,16 @@ var totalValue = "";
 
 
 addBtn.addEventListener("click", function() {
-  getInputs(addNum);
+  calculator(addNum);
 }, false);
 subtractBtn.addEventListener("click", function() {  
-  getInputs(subtractNum);
+  calculator(subtractNum);
   }, false);
 divideBtn.addEventListener("click", function() {
-  getInputs(divideNum);
+  calculator(divideNum);
 }, false);
 multiplyBtn.addEventListener("click", function() {
-  getInputs(multiplyNum);
+  calculator(multiplyNum);
 }, false);
 
 /*Create a function that adds two numbers
@@ -59,7 +59,7 @@ function multiplyNum (num1, num2) {
   return product
 }
 
-  
+/*  
 function getInputs(operationMath) {
   var inputs = {};
   inputs.num1 = parseInt(number1.value);
@@ -68,14 +68,17 @@ function getInputs(operationMath) {
 
   calculator(inputs.num1, inputs.num2, inputs.operate);
 }
+*/
 
- function calculator(num1, num2, operationToDo) {
-     var result = operationToDo(num1, num2);
-     console.log("result", result);
-     console.log("num1", num1);
-     console.log("num2", num2);
-     console.log("operationToDo", operationToDo);
-     return result
+ function calculator(operationToDo) {
+    num1 = parseInt(number1.value);
+    num2 = parseInt(number2.value);
+    var result = operationToDo(num1, num2);
+    console.log("result", result);
+    console.log("num1", num1);
+    console.log("num2", num2);
+    console.log("operationToDo", operationToDo);
+    return result
      }
     /*var num1 = parseInt(number1.value);
     var  num2 = parseInt(number2.value);
