@@ -36,7 +36,7 @@ function divideNum (num1, num2) {
 /*
   Create a function that multiplies two numbers
   passed in as arguments. Return the product.
- */
+*/
 function multiplyNum (num1, num2) {
   numTotal = num1 * num2;
   return numTotal;
