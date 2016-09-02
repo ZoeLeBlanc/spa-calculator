@@ -1,46 +1,54 @@
-var addition = document.getElementById("addition");
-var subtraction = document.getElementById("subtraction");
-var division = document.getElementById("division");
-var multiplication = document.getElementById("multiplication");
-var number1 = document.getElementById("number1").value;
-var number2 = document.getElementById("number2").value;
-var totalValue = "";
+var addBtn = document.getElementById("addition");
+var subtractBtn = document.getElementById("subtraction");
+var divideBtn = document.getElementById("division");
+var multiplyBtn = document.getElementById("multiplication");
+var outputDiv = document.getElementById("output");
+var number1 = document.getElementById("number1");
+var number2 = document.getElementById("number2");
 
-/*
-  Create a function that adds two numbers
+//Event Listeners
+addBtn.addEventListener("click", calculator, false);
+subtractBtn.addEventListener("click", calculator, false);
+divideBtn.addEventListener("click", calculator, false);
+multiplyBtn.addEventListener("click", calculator, false);
+
+/*Create a function that adds two numbers
   passed in as arguments. Return the sum.
  */
 function addNum (num1, num2) {
-  numTotal = num1 + num2;
-  return numTotal;
+  var sum = num1 + num2;
+  return sum
 }
 
 /*
   Create a function that subtracts two numbers
   passed in as arguments. Return the difference.
- */
-
+ 
+*/
 function subtractNum (num1, num2) {
-  numTotal = num1 - num2;
-  return numTotal;
+  var difference = num1 - num2;
+  return difference
 }
 
 /*
   Create a function that divides two numbers
   passed in as arguments. Return the quotient.
- */
+*/
 function divideNum (num1, num2) {
-  numTotal = num1 / num2;
-  return numTotal;
+  var remainder = num1 % num2;
+  return remainder
 }
+
 /*
   Create a function that multiplies two numbers
   passed in as arguments. Return the product.
 */
 function multiplyNum (num1, num2) {
-  numTotal = num1 * num2;
-  return numTotal;
+  var product = num1 * num2;
+  return product
 }
+
+
 /*
   Create a function that accepts three arguments.
     1. First number
@@ -48,27 +56,29 @@ function multiplyNum (num1, num2) {
     3. A function that performs an operation on them
 
   Return the value of the operation.
- */
- function calculator(num1, num2, operation) {
-    if (addition.clicked) { 
-     totalValue = operation(num1, num2);
-    }
-    if (subtraction.clicked) {
-     totalValue = operation(num1, num2);
-    }
-    if (division.clicked) {
-     totalValue = operation(num1, num2);
-    }
-    if (multiplication.clicked) {
-     totalValue = operation(num1, num2);
-    }
-    console.log(totalValue);
-    return totalValue;
- }
-
-calculator(number1, number2, addNum);
-
-//addition.addEventListener("click", calculator(number1.value, number2.value, addNum), true);
-//subtraction.addEventListener("click", calculator(number1.value, number2.value, sutractNum), true);
-//division.addEventListener("click", calculator(number1.value, number2.value, divideNum), true);
-//multiplication.addEventListener("click", calculator(number1.value, number2.value, multiplyNum), true);
+*/
+ 
+function calculator(num1, num2, operationToDo) {
+    var result = "";
+    num1 = parseInt(number1.value);
+    num2 = parseInt(number2.value);
+    if (addBtn.click) { 
+      operationToDo = addNum;
+      result = operationToDo(num1, num2);
+    } else if (subtractBtn.click) {
+      operationToDo = subtractNum;
+      result = operationToDo(num1, num2);
+    } else if (divideBtn.click) {
+      operationToDo = divideNum;
+      result = operationToDo(num1, num2);
+    } else if (multiplyBtn.click) {
+      operationToDo = multiplyNum;
+      result = operationToDo(num1, num2);
+    } 
+    console.log("num1", num1);
+    console.log("operationToDo", operationToDo);
+    console.log("result", result);
+    return result
+}
+    //console.log("click" , num1, num2, operation);
+    //return totalValue;
