@@ -5,11 +5,8 @@ var multiplyBtn = document.getElementById("multiplication");
 var outputDiv = document.getElementById("output");
 var number1 = document.getElementById("number1");
 var number2 = document.getElementById("number2");
-//var numb1 = number1.value;
-//var numb2 = number2.value;
-var totalValue = "";
 
-
+//Event Listeners
 addBtn.addEventListener("click", calculator, false);
 subtractBtn.addEventListener("click", calculator, false);
 divideBtn.addEventListener("click", calculator, false);
@@ -51,19 +48,6 @@ function multiplyNum (num1, num2) {
   return product
 }
 
-/*
-function getValues(operationMath) {
-  var values= {};
-  values.num1 = parseInt(number1.value);
-  values.num2 = parseInt(number2.value);
-  values.operate = operationMath;
-
-  calculator(values.num1, values.num2, values.operate);
-}
-*/
-
-
-   
 
 /*
   Create a function that accepts three arguments.
